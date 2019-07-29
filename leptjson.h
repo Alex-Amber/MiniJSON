@@ -16,8 +16,8 @@ typedef struct lept_member lept_member;
 
 struct lept_value {
     union {
-        struct { lept_member *m; size_t size; capacity; } o;  /* object: members, member count */
-        struct { lept_value *e; size_t size; capacity; } a;   /* array: elements, elements count */
+        struct { lept_member *m; size_t size, capacity; } o;  /* object: members, member count */
+        struct { lept_value *e; size_t size, capacity; } a;   /* array: elements, elements count */
         struct { char *s; size_t len; } s;          /* string: null-terminated string, string length */
         double n;                                   /* value for a JSON number */
     }u;
